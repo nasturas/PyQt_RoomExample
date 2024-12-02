@@ -38,7 +38,8 @@ class room(QWidget):
     def cleanUp(self):
         self.ui.cleanStatusLabel.setText("Curata")
         self.ui.cleanStatusLabel.adjustSize()
-        self.__isFree = True
+        if self.__isFree == False and self.ui.checkInDate.text() == 'Liber':
+            self.__isFree = True
 
     def Get_IsFree(self):
         return self.__isFree
